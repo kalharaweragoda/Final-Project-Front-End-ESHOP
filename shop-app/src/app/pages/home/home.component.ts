@@ -11,12 +11,12 @@ import { env } from '../../env/env.test';
 })
 export class HomeComponent{
 
-
+  
   router = inject(Router);
 
   goToComponent(): void {
     this.router.navigate(['/products']);
   }
 
-
+  
 }

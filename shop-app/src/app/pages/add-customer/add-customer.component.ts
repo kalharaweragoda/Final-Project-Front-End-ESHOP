@@ -37,13 +37,13 @@ export class AddCustomerComponent {
             'Customer successfully registered.',
             'success'
           );
-
+          
         },
         error: (err) => {
           if (err.status === 400 && err.error) {
             let errorMessage = '';
             let errorObj;
-
+  
             try {
               errorObj =
                 typeof err.error === 'string' ? JSON.parse(err.error) : err.error;
@@ -51,13 +51,13 @@ export class AddCustomerComponent {
               console.error('Error parsing error response', e);
               errorObj = {};
             }
-
+  
             if (typeof errorObj === 'object' && errorObj !== null) {
               errorMessage = Object.values(errorObj).join('<br>');
             } else {
               errorMessage = 'An unexpected error occurred';
             }
-
+  
             Swal.fire('Error', errorMessage.trim(), 'error');
           } else {
             Swal.fire(

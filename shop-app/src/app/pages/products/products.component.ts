@@ -40,7 +40,7 @@ export class ProductsComponent implements OnInit {
 
   onFilterChange(): void {
     if (!this.selectedFilter || !this.selectedOrder) return;
-
+    
     const direction = this.selectedOrder === 'ascending' ? 1 : -1;
 
     this.listOfProducts.sort((a: Product, b: Product) => {
